@@ -1,14 +1,16 @@
-<div class="login" ng-controller="LoginController">
-  <form action="">
-    <a class="title" href="javascript:;">用户名</a>
-    <input class="value" ng-model="user" type="text" placeholder="输入用户名"/>
-    <a class="title" href="javascript:;">密码</a>
-    <input class="value" ng-model="password" type="text" placeholder="输入密码"/>
+<div class="container" style="background: url('../templates/bg.jpg');background-size: cover;">
+  <div class="login" ng-controller="LoginController">
+    <form action="http://localhost/users/login" method="post">
+      <a class="title" href="javascript:;">用户名</a>
+      <input class="value" name="user" ng-model="user" type="text" placeholder="输入用户名" />
+      <a class="title" href="javascript:;">密码</a>
+      <input class="value" name="password" ng-model="password" type="text" placeholder="输入密码" />
 
-    <input class="sumbit" ng-click="logintitle()" type="submit" value="登陆" />
-  </form>
-  <div class="section">
-    <a class="signup" ng-click="registertitle()" href="#!/register">注册账号</a>
-    <a class="forgot" href="javascript:;">忘记密码</a>
+      <input class="sumbit" ng-click="logintitle()" type="submit" value="登陆" />
+    </form>
+    <div class="section">
+      <a class="signup" ng-click="registertitle()" href="#!/register">注册账号</a>
+      <a class="forgot" href="javascript:;">忘记密码</a>
+    </div>
   </div>
 </div>

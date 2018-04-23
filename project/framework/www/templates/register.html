@@ -1,5 +1,6 @@
+<div class="container" style="background: url('../templates/bg.jpg') no-repeat;background-size: cover;">
 <div class="register" ng-controller="RegisterController">
-  <form action="">
+  <form action="http://localhost/users/register" method="post">
     <a class="title" href="javascript:;">用户名</a>
     <input class="value" ng-model="user" name="user" type="text" placeholder="输入用户名"/>
     <a class="title" href="javascript:;">密码</a>
@@ -11,4 +12,5 @@
     <a class="signup" ng-click="changetitle()" href="#!/login">登录账号</a>
     <a class="forgot" href="javascript:;">忘记密码</a>
   </div>
+</div>
 </div>

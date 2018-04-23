@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  max-width: 1580px;
+  max-width: 1620px;
 }
 
 a, body, div, h1, li, input, button {
@@ -67,7 +67,7 @@ html {
   }
   .header .container {
     width: 100%;
-    max-width: 1580px;
+    max-width: 1620px;
     overflow: hidden;
   }
   .header .container #more {
@@ -210,8 +210,6 @@ html {
   .main .container {
     height: calc(100% - 123px);
     box-sizing: border-box;
-    background: url("../templates/bg.jpg") no-repeat;
-    background-size: cover;
   }
   .main .login, .main .register {
     margin: 0 auto;
@@ -234,6 +232,8 @@ html {
   .main .login .value, .main .register .value {
     height: 50px;
     width: 100%;
+    box-sizing: border-box;
+    margin-right: 20px;
     font-size: 16px;
     padding: 5px 20px;
   }

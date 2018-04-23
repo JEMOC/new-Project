@@ -26,7 +26,7 @@ body {
 }
 
 .container{
-  max-width: 1580px;
+  max-width: 1620px;
 }
 a,body,div,h1,li,input,button {
   padding: 0;
@@ -70,7 +70,7 @@ html {
 
     .container {
       width: 100%;
-      max-width: 1580px;
+      max-width: 1620px;
       overflow: hidden;
 
       #more {
@@ -237,8 +237,7 @@ html {
     .container{
       height: calc(100% - 123px);
       box-sizing: border-box;
-      background: url('../templates/bg.jpg') no-repeat;
-      background-size: cover;
+
     }
     .login,.register{
       margin: 0 auto;
@@ -258,6 +257,7 @@ html {
         cursor: default;
       }
       .value{
+        position: relative;
         height: 50px;
         width: 100%;
         font-size: 16px;
