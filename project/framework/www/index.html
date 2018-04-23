@@ -1,17 +1,23 @@
-<html>
+<html ng-app="routeModule">
 
 <head>
-  <script src="./js/angular.min.js"></script>
   <link rel="stylesheet" href="./css/index.css">
   <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/angular-route.min.js"></script>
+  <script type="text/javascript" src="./js/ajax.js"></script>
+  <script src="./router/router.js"></script>
 </head>
 
-<body ng-app>
+<body ng-controller="app">
   <div class="header">
     <div class="top">
-      <div class="title">
-        <!-- 标题 -->
-        <!-- 标题 -->
+      <div class="container">
+        <div class="title">
+          <!-- 标题 -->
+          <h1 ng-bind="title">登陆</h1>
+          <!-- 标题 -->
+        </div>
       </div>
     </div>
     <div class="container">
@@ -20,8 +26,8 @@
     <ul id="side" class="side-nav">
       <li class="user">
         <!-- user component -->
-        <a id="sign" href="javascript:;">注册</a>
-        <a id="login" href="javascript:;">登录</a>
+        <a id="sign" ng-click='registertitle()' href="#!/register">注册</a>
+        <a id="login" ng-click='logintitle()' href="#!/login">登录</a>
         <!-- user component -->
       </li>
       <li class="search">
@@ -39,17 +45,20 @@
 
     </ul>
   </div>
-  <div class="section">
-    <!-- main show -->
-    <!-- todo something -->
-    <!-- main show -->
+  <div class="main">
+    <div class="container">
+      <div ng-view></div>
+      <!-- main show -->
 
+      <!-- todo something -->
+      <!-- main show -->
+    </div>
+    <div style="clear:both;"></div>
   </div>
   <div class="footer">
     <!-- footer -->
     <!-- footer -->
   </div>
-  <script type="text/javascript" src="./js/ajax.js"></script>
   <script type="text/javascript">
     window.onload = function() {
       console.log('window onloaded');
@@ -59,35 +68,10 @@
       var side = document.getElementById('side');
       var more = document.getElementById('more');
       var searchbtn = document.getElementById('searchbtn');
-      sign.onclick = function() {
-        ajax({
-          type: 'get',
-          url: 'http://localhost/users',
-          data: {
-            hello: 'world',
-            ready: 'ok'
-          },
-          success: function(data) {
-            console.log(data);
-          }
-        });
-      }
-
-      login.onclick = function() {
-        ajax({
-          type: 'post',
-          url: 'http://localhost/users',
-          data: {
-            hello: 'world',
-            ready: 'ok'
-          }
-        });
-      }
-    }
 
     search.addEventListener('focus', function() {
       search.parentNode.classList.add('focus');
-      document.removeEventListener('click',show);
+      document.removeEventListener('click', show);
     });
 
     search.addEventListener('blur', function() {
@@ -101,18 +85,16 @@
     });
 
     var show = function(event) {
-      if (event.target != side && event.target != more && event.target != searchbtn ) {
+      if (event.target != side && event.target != more && event.target != searchbtn) {
         console.log('click');
-        if (document.body.clientWidth <= 768 ) {
+        if (document.body.clientWidth <= 768) {
           side.style.transform = 'translateX(-100%)';
-        }else{
+        } else {
           side.style.transform = 'translateX(0)';
         }
       }
     }
-
-
-
+  }
   </script>
 </body>
 

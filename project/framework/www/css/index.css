@@ -18,6 +18,11 @@
 
 body {
   background-color: #fcfcfc;
+  height: 100%;
+}
+
+.container {
+  max-width: 1580px;
 }
 
 a, body, div, h1, li, input, button {
@@ -39,6 +44,7 @@ a {
 }
 
 html {
+  height: 100%;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
 }
@@ -46,7 +52,7 @@ html {
 @media screen and (min-width: 0) {
   .footer,
 .header,
-.section {
+.main {
     padding-left: 300px;
     box-sizing: border-box;
     min-width: 300px;
@@ -61,7 +67,7 @@ html {
   }
   .header .container {
     width: 100%;
-    max-width: 1250px;
+    max-width: 1580px;
     overflow: hidden;
   }
   .header .container #more {
@@ -187,18 +193,85 @@ html {
   }
   .header .top {
     height: 123px;
-    background-color: #ff5252;
+    background-color: #03A9F4;
+  }
+  .header .top .title {
+    color: #fff;
+    height: 100%;
+    margin: 0 auto;
+    line-height: 123px;
+    text-align: center;
   }
 
-  .section {
-    margin-top: 123px;
+  .main {
+    padding-top: 123px;
     background-color: #eee;
+  }
+  .main .container {
+    height: calc(100% - 123px);
+    box-sizing: border-box;
+    background: url("../templates/bg.jpg") no-repeat;
+    background-size: cover;
+  }
+  .main .login, .main .register {
+    margin: 0 auto;
+    padding: 58px 18px;
+    width: 360px;
+    height: 425px;
+    background: url("");
+    background-color: #333;
+  }
+  .main .login .title, .main .register .title {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    font-weight: 700;
+    vertical-align: text-bottom;
+    font-size: 16px;
+    cursor: default;
+  }
+  .main .login .value, .main .register .value {
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+  .main .login .sumbit, .main .register .sumbit {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #03A9F4;
+    border-radius: 2px;
+    margin-top: 45px;
+    cursor: pointer;
+  }
+  .main .login .sumbit:hover, .main .register .sumbit:hover {
+    background-color: #2196F3;
+  }
+  .main .login .section, .main .register .section {
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+  }
+  .main .login .section .signup, .main .login .section .forgot, .main .register .section .signup, .main .register .section .forgot {
+    color: #fff;
+    width: 100px;
+    float: left;
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 16px;
   }
 }
 @media only screen and (max-width: 768px) {
   .footer,
 .header,
-.section {
+.main {
     padding-left: 0;
   }
 

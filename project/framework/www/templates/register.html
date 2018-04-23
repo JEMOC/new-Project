@@ -1,0 +1,14 @@
+<div class="register" ng-controller="RegisterController">
+  <form action="">
+    <a class="title" href="javascript:;">用户名</a>
+    <input class="value" ng-model="user" name="user" type="text" placeholder="输入用户名"/>
+    <a class="title" href="javascript:;">密码</a>
+    <input class="value" ng-model="password" name="password" type="text" placeholder="输入密码"/>
+
+    <input class="sumbit" ng-click="registertitle()" type="submit" value="注册" />
+  </form>
+  <div class="section">
+    <a class="signup" ng-click="changetitle()" href="#!/login">登录账号</a>
+    <a class="forgot" href="javascript:;">忘记密码</a>
+  </div>
+</div>
