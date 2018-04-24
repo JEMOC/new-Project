@@ -1,0 +1,29 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "*",
+    "mongodb": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JEMOC/new-Project.git"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "none",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JEMOC/new-Project/issues"
+  },
+  "homepage": "https://github.com/JEMOC/new-Project#readme"
+}

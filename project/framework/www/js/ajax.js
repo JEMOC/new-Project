@@ -1,7 +1,6 @@
 function ajax(options) {
-  console.log('ajax start');
   options = options || {};
-  options.type = (options.type || "GET").toUpperCase();
+  options.method = (options.method || "GET").toUpperCase();
   var params = formatParams(options.data);
 
   var xhr;
@@ -23,16 +22,13 @@ function ajax(options) {
     }
   }
 
-  if (options.type == 'GET') {
-    console.log('ajax get start');
+  if (options.method == 'GET') {
     var urlstr = options.url + '?' + params;
     xhr.open("GET", options.url + '?' + params, true);
-    console.log(urlstr);
     xhr.send(null);
-  } else if (options.type == 'POST') {
-    console.log('ajax post start');
+  } else if (options.method == 'POST') {
     xhr.open('POST', options.url, true)
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencode');
+    xhr.setRequestHeader('Content-method', 'application/x-www-form-urlencode');
     xhr.send(options.data);
 
   }

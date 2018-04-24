@@ -69,6 +69,7 @@ html {
 
 
     .container {
+      z-index: 200;
       width: 100%;
       max-width: 1620px;
       overflow: hidden;
@@ -196,7 +197,6 @@ html {
         // box-sizing: inherit;
         line-height: 44px;
         height: 44px;
-        padding: 0 30px;
         transition: background-color 0.3s ease-out;
 
         &:hover {
@@ -207,6 +207,7 @@ html {
           color: #333;
           font-size: 15px;
           font-weight: 700;
+          padding: 0 30px;
         }
       }
 
@@ -257,11 +258,12 @@ html {
         cursor: default;
       }
       .value{
-        position: relative;
         height: 50px;
         width: 100%;
         font-size: 16px;
         padding:5px 20px;
+        z-index: 0;
+        border: 1px solid transparent;
       }
       .sumbit{
         width: 100%;
@@ -280,18 +282,24 @@ html {
         margin-top: 30px;
         width: 100%;
         height: 40px;
-        .signup,.forgot{
+        .log{
+          display: inline-block;
+          width: auto;
+          margin: 0 auto;
+        }
+        .reg,.forgot,.log{
           color: #fff;
           width: 100px;
-          float: left;
-          height: 100%;
-          width: 50%;
-          display: inline-block;
-          line-height: 40px;
+          height: 45px;
           text-align: center;
           box-sizing: border-box;
           font-size: 16px;
-
+        }
+        .reg,.forgot{
+          float: left;
+          width: 50%;
+          display: inline-block;
+          line-height: 40px;
         }
       }
     }

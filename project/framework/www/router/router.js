@@ -54,8 +54,40 @@ routeModule.controller('LoginController',function($scope){
   }
 });
 routeModule.controller('RegisterController',function($scope){
+  var comfirm = document.getElementById('comfirm');
   $scope.user = '';
   $scope.password = '';
+  $scope.comfirm = '';
+  $scope.isExist = function(){
+    ajax({
+      url:'http://localhost/users/isexist/',
+      method:'get',
+      data:{user:$scope.user},
+      success:function(data){
+        var user = document.getElementById('user');
+        console.log(data.result);
+        console.log(data.result == 'exist');
+        if((JSON.parse(data).result == 'exist') || ($scope.user == '')){
+          console.log('exist');
+          user.style.borderColor='red';
+        }else{
+          console.log('no');
+          user.style.borderColor='green';
+        }
+      }
+    })
+  };
+  $scope.errorcomfirm = function(){
+    console.log(event);
+    if($scope.password == $scope.comfirm){
+      comfirm.style.borderColor='green';
+      // $scope.$event.target.style.borderColor='green';
+    }else{
+      // $scope.$event.target.style.borderColor='red';
+      comfirm.style.borderColor= 'red';
+    }
+  };
+
   $scope.logintitle = function(){
     $scope.$emit('title','登录');
   };

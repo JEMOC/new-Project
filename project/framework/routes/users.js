@@ -5,9 +5,33 @@ var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost/';
 
 
+router.get('/isexist',function(req,res){
+  MongoClient.connect(url,function(err,client){
+    if(err){
+      throw err;
+    }else{
+      const db = client.db('CC');
+      const users = db.collection('users');
+      users.find({user:req.query.user}).toArray(function(err,result){
+        console.log(result);
+        console.log(result.length);
+        if(err){
+          throw err;
+        }else{
+          if(result.length == 1){
+            res.send({result:'exist'});
+          }else{
+            res.send({result:'no'});
+          }
+        }
+      });
+    }
+    client.close();
+  });
+})
+
 
 router.post('/login',function (req,res) {
-  console.log(req.body);
     var query = {
       user:req.body.user,
       password:req.body.password
@@ -22,20 +46,46 @@ router.post('/login',function (req,res) {
           if(err){
             throw err;
           }else{
-            if(result.length == 1){
+            if(result.length){
               console.log('login success');
             }else{
               console.log('login failed');
             }
-          }s
+          }
         });
       }
+      client.close();
     });
-    mon
 })
 
-router.post('/register',function () {
+router.post('/register',function (req,res) {
+  var query = {
+    user:req.body.user,
+    password:req.body.password
+  };
+  MongoClient.connect(url,function(err,client){
+    console.log('mongo connect success');
+    if(err){
+      throw err;
+    }else{
+      const db = client.db('CC');
+      const users = db.collection('users');
+      users.find(query).toArray(function(err,result){
+        if(err){
+          throw err;
+        }else{
+          if(result.length !== 0){
+            console.log('This user already exists!');
+          }else{
+            users.insert(query);
+            console.log('register success');
+          }
+        }
+        client.close();
+      });
+    }
 
+  });
 })
 
 module.exports= router;
