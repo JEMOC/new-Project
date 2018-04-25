@@ -48,6 +48,8 @@ router.post('/login',function (req,res) {
           }else{
             if(result.length){
               console.log('login success');
+              res.cookie('user',req.body.user);
+              res.redirect('http://localhost');
             }else{
               console.log('login failed');
             }

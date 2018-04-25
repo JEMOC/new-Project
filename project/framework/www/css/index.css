@@ -262,12 +262,15 @@ html {
     margin: 0 auto;
   }
   .main .login .section .reg, .main .login .section .forgot, .main .login .section .log, .main .register .section .reg, .main .register .section .forgot, .main .register .section .log {
-    color: #fff;
+    color: #eee;
     width: 100px;
     height: 45px;
     text-align: center;
     box-sizing: border-box;
     font-size: 16px;
+  }
+  .main .login .section .reg:hover, .main .login .section .forgot:hover, .main .login .section .log:hover, .main .register .section .reg:hover, .main .register .section .forgot:hover, .main .register .section .log:hover {
+    color: #fff;
   }
   .main .login .section .reg, .main .login .section .forgot, .main .register .section .reg, .main .register .section .forgot {
     float: left;

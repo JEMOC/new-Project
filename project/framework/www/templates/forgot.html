@@ -1,13 +1,13 @@
 <div class="container" style="background: url('../templates/bg.jpg') no-repeat;background-size: cover;">
-<div class="register" ng-controller="RegisterController">
-  <form action="http://localhost/users/register" method="post">
+<div class="register" ng-controller="ForgotController">
+  <form action="http://localhost/users/forgot" method="post">
     <a class="title" href="javascript:;">用户名</a>
     <input autofocus class="value" ng-model="user" id="user" ng-change="isExist()" name="user" type="text" placeholder="输入用户名"/>
     <a tabindex="-1" class="title" href="javascript:;">密码</a>
     <input class="value" ng-model="password" name="password" type="password" placeholder="输入密码"/>
     <a tabindex="-1" class="title">确认密码</a>
     <input  class="value" ng-change='errorcomfirm()' id="comfirm" ng-model="comfirm" type="password" placeholder="请再次确认密码" />
-    <input class="sumbit" ng-click="registertitle()" type="submit" value="注册" />
+    <input class="sumbit" ng-click="registertitle()" type="submit" value="重设密码" />
   </form>
   <div class="section">
     <a class="log" ng-click="changetitle()" href="#!/login">登录账号</a>

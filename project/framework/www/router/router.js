@@ -33,8 +33,15 @@ routeModule.config(['$routeProvider',function ($routeProvider) {
   .when('/register',{
     templateUrl: './templates/register.html',
     controller: 'RegisterController'
+  }).when('/forgot',{
+    templateUrl: './templates/forgot.html',
+    controller: 'ForgotController'
   });
 }]);
+
+routeModule.controller('ForgotController',function($scope){
+  $scope.user= '';
+});
 
 routeModule.controller('LoginController',function($scope){
   $scope.user = '';
